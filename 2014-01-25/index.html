@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>20140125</title>
+<link type="text/css" rel="stylesheet" href="css/style.css">
+<style>
+.small { font-size: 30px; }
+.large { font-size: 120px; }
+.red { color: red; }
+.blue { color: blue; }
+.center { text-align: center; }
+.code { font-size: 12px; }
+</style>
+</head>
+<body>
+
+<h1>PhoneGap</h1>
+<p>2014.01.25</p>
+
+<h1>About me</h1>
+
+<h2>About me</h2>
+
+<ul>
+<li>GitHub: <a href="http://github.com/okamuuu" target="_blank">http://github.com/okamuuu/</a></li>
+<li>Blog: <a href="http://okamuuu.hatenablog.com/" target="_blank">http://okamuuu.hatenablog.com/</a></li>
+<li>Languages: JavaScript, Node.js, Perl, PHP, HTML, CSS, Objective-C, PHP, JAVA</li>
+<li>Goal: プログラミングの書籍を出版</li>
+</ul>
+
+<h1>最近は主に<br />Angular.js と Sencha Touch</h1>
+
+<h1>お題</h1>
+
+<h1>エディタ...</h1>
+
+<h2>エディタ...</h2>
+
+<ul>
+    <li>大体 vim + zsh + screen</li>
+    <li>vim-plugin は NeoBundle</li>
+    <li>iPhone アプリ作るときは Xcode</li>
+    <li>Java とかは IntelliJ</li>
+</ul>
+
+<h1>本題</h1>
+
+<h1>PhoneGap</h1>
+
+<h2>PhoneGap</h2>
+
+<p>Create the App</p>
+
+<pre><code>% phonegap create hello com.example.hello HelloWorld
+</code></pre>
+
+<h2>PhoneGap</h2>
+
+<p>Build the App</p>
+
+<pre><code>% cd hello
+% phonegap build ios
+[phonegap] detecting iOS SDK environment...
+[phonegap] using the local environment
+[phonegap] compiling iOS...
+[phonegap] successfully compiled iOS app
+</code></pre>
+
+<h2>PhoneGap</h2>
+
+<p>Test the App on an Emulator or Device</p>
+
+<pre><code>% phonegap run android
+[phonegap] detecting Android SDK environment...
+[phonegap] using the local environment
+[phonegap] compiling Android...
+[phonegap] successfully compiled Android app
+[phonegap] trying to install app onto device
+[phonegap] no device was found
+[phonegap] trying to install app onto emulator
+[phonegap] successfully installed onto emulator
+</code></pre>
+
+<h2>PhoneGap</h2>
+
+<p>Images</p>
+
+<img src="images/pg_android_emulate.png" width="500px" />
+
+<h2>PhoneGap</h2>
+
+<p>こんな感じの事ができるのでいい感じに思える</p>
+
+<ul>
+    <li>native code が書けなくてもhtml, css, javascript でアプリが作れる</li>
+    <li>iOS, Android の他にも色々な Platform を簡単にビルド</li>
+    <li>native機能(Camera, Geolocation, Storageなど)をjsで呼びだせる※一部機能が未対応</li>
+    <li>native機能は各種プラグインがCPANのように開発者が公開していたりする</li>
+</ul>
+
+<h2>PhoneGap</h2>
+
+<p>実際に使ってみた感想</p>
+
+<ul>
+    <li>実務だと課金機構が必須</li>
+    <li>独自プラグインを開発せざるを得ない</li>
+    <li>Cordovaはちょっと癖があり、iOS と Android 両方に対応するのにコストがかかる</li>
+    <li>想定していた以上にnative側での作業が発生してしまう</li>
+</ul>
+
+<h1>(ノД`)・゜・</h1>
+
+<h1>個人で簡単なアプリ作る人にはオススメです</h1>
+
+<h1>ご清聴ありがとうございました!!</h1>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> 
+<script>!window.jQuery && document.write('<script src="bower_components/jquery/jquery.min.js"><\/script>')</script> 
+<script type="text/javascript" src="js/libs/prettify.js"></script>
+<script type="text/javascript" src="js/mylibs/m9.js"></script>
+<script type="text/javascript">
+jQuery.event.add(window, "load", function(){
+    prettyPrint();
+
+    var elapsed = 0;
+    var timer = $('<div id="timer"><span class="min">00</span>:<span class="sec">00</span></div>');
+    var m = timer.find('.min');
+    var s = timer.find('.sec');
+
+    elapsed = setInterval(do_time, 1000);
+
+    $('body').append( timer );
+
+    function do_time() {
+        minute = parseFloat(m.text());
+        second = parseFloat(s.text());
+        
+        second++;
+        
+        if(second > 59) {
+            second = 0;
+            minute = minute + 1;
+        }
+        if(minute > 59) {
+            minute = 0;
+        }
+        
+        m.html("0".substring(minute >= 10) + minute);
+        s.html("0".substring(second >= 10) + second);
+    }
+    
+});
+</script>
+</body>
+</html>
