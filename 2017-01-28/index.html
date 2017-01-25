@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>20170128</title>
+<link type="text/css" rel="stylesheet" href="css/style.css">
+
+<style>
+.small { font-size: 30px; }
+.large { font-size: 120px; }
+.red { color: rgb(169, 68, 66); }
+.blue { color: rgb(49, 112, 143); }
+.center { text-align: center; }
+.code { font-size: 12px; }
+</style>
+</head>
+<body>
+
+<h1>フロントエンド</h1>
+<p>2017.01.28</p>
+
+<h2>About me</h2>
+
+<ul>
+<li>GitHub: <a href="http://github.com/okamuuu" target="_blank">http://github.com/okamuuu/</a></li>
+<li>Blog: <a href="http://okamuuu.hatenablog.com/" target="_blank">http://okamuuu.hatenablog.com/</a></li>
+<li>Languages: JavaScript, Node.js, Perl, Python, Go</li>
+<li>Goal: 外国でのんびりしながらだらだらプログラミングして過ごしたい</li>
+<li>一応サーバーサイドエンジニアです</li>
+</ul>
+
+<h2>近況</h2>
+
+<ul>
+<li>最近 Go と React.js デビューしました</li>
+<li>クラアントから「言語何使ってもいいから小規模なWEBサービスつくって」</li>
+<li>ということで Go + React.js で Single Page Application しました</li>
+</ul>
+
+<h2>今日話すこと</h2>
+
+<ul>
+  <li>ある案件に一人でフルスタックエンジニアすることになった</li>
+  <li>とはいえ手が足りないので人を雇ってもらうことになった</li>
+  <li>コーダーは雇えるけどフロントエンドエンジニアは雇えなかった</li>
+  <li>少しでも自分の負担を減らすためにコーダーに React.js を伝授したい</li>
+</ul>
+
+<h2>今日の話に登場する人</h2>
+
+<ul>
+  <li>サーバーサイドエンジニア</li>
+  <li>コーダー</li>
+  <li>フロントエンジニア</li>
+</ul>
+
+<h2>サーバーサイドエンジニア</h2>
+<p>API のインターフェースやデータ構造を考える人。インフラを意識してコードを書く人。</p>
+
+<h2>コーダー</h2>
+<p>Zeplin などのデザインの指示書やスタイルガイドから HTML, CSS を書き出す人</p>
+
+<h2>フロントエンジニア</h2>
+<p>書き出された HTML, CSS 元に、npm, webpack を使ってライブラリを使って簡素な HTML と minify された Javascript を用意する人。</p>
+<p class="red">ここではフロントエンドエンジニアに Flash のようなインタラクティブデザインは求めていない</p>
+
+<h2>思惑</h2>
+
+<ul>
+  <li>React を使ってサービス作りたい</li>
+  <li>とはいえ全ての修正対応を自分がしたくない</li>
+  <li>というわけで React.js を使える人材を雇いたい</li>
+  <li>もしくは React.js が使える人材を育てたい</li>
+</ul>
+
+<p>結果、コーダーさんに React.js を伝授することになった</p>
+
+<h2>色々試してみたが...</h2>
+
+<ul>
+  <li>webpack の設定方法がわからない</li>
+  <li>設定方法をドキュメント化してみる</li>
+  <li>どこにファイルを作っていいかわからない</li>
+  <li>react-router の記述は全部こちらでやっておこう</li>
+  <li>DatePicker など外部ライブラリはどうやれば...</li>
+  <li>難易度が高いよね。よしそれもこちらで巻き取ろう</li>
+</ul>
+
+<p>やはりコーダーには React.js は荷が重いようだ...</p>
+
+<h2>残念な結果だが、自身に変化があった</h2>
+
+<p>frontend の何たるかが少しわかった気がする</p>
+
+<ul>
+  <li>仕上がったデザイン指示書を見ながら画面遷移をイメージする</li>
+  <li>噛み合わない仕様があれば早い段階で気づく</li>
+  <li>WEB API の interface に密接に関わる</li>
+  <li>API が不適切だったりすると早い段階で気づく</li>
+  <li>デザイン指示書の要素が欠落していたりすると早い段階で気づく</li>
+</ul>
+
+<p>デザイナー、プランナー、エンジニアがそれぞれ思い描いている歯車が噛み合わない事に早い段階で気づく</p>
+<p class="blue">フロントエンドエンジニアは真ん中にいる</p>
+
+<h1>結論</h1>
+
+<h1>強いフロントエンドエンジニアが居たら勝てる</h1>
+
+<h1>ご清聴ありがとうございました</h1>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script>!window.jQuery && document.write('<script src="bower_components/jquery/jquery.min.js"><\/script>')</script>
+<script type="text/javascript" src="js/libs/jquery.min.js"></script>
+<script type="text/javascript" src="js/libs/prettify.js"></script>
+<script type="text/javascript" src="js/mylibs/m9.js"></script>
+<script type="text/javascript">
+jQuery.event.add(window, "load", function(){
+    prettyPrint();
+
+    var elapsed = 0;
+    var timer = $('<div id="timer"><span class="min">00</span>:<span class="sec">00</span></div>');
+    var m = timer.find('.min');
+    var s = timer.find('.sec');
+
+    elapsed = setInterval(do_time, 1000);
+
+    $('body').append( timer );
+
+    function do_time() {
+        minute = parseFloat(m.text());
+        second = parseFloat(s.text());
+
+        second++;
+
+        if(second > 59) {
+            second = 0;
+            minute = minute + 1;
+        }
+        if(minute > 59) {
+            minute = 0;
+        }
+
+        m.html("0".substring(minute >= 10) + minute);
+        s.html("0".substring(second >= 10) + second);
+    }
+
+});
+</script>
+</body>
+</html>
